@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payfair</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Payfair</h1>
+        <p class="tagline">Pay fair prices for Pokémon TCG.</p>
+      </header>
+
+      <label class="row">
+        <input type="checkbox" id="enabled" />
+        <span>Enable Payfair</span>
+      </label>
+
+      <fieldset>
+        <legend>When a listing is above MSRP</legend>
+        <label class="row">
+          <input type="radio" name="mode" id="mode-warn" value="warn" />
+          <span>Warn me with a badge</span>
+        </label>
+        <label class="row">
+          <input type="radio" name="mode" id="mode-hide" value="hide" />
+          <span>Hide the listing</span>
+        </label>
+      </fieldset>
+
+      <label class="row">
+        <input type="checkbox" id="gouge" />
+        <span>Notify me about price gouging (&ge;150% of MSRP)</span>
+      </label>
+
+      <p id="status" class="status" role="status"></p>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
