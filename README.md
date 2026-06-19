@@ -36,6 +36,8 @@ pnpm dev:firefox    # launch Firefox
 pnpm build          # production build into .output/
 pnpm zip            # packaged zip for store upload
 pnpm compile        # type-check only
+pnpm test           # run the Vitest suite
+pnpm test:watch     # vitest in watch mode
 ```
 
 ## Project layout
