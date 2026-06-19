@@ -88,6 +88,25 @@ describe('evaluate', () => {
   it('returns null when price is missing', () => {
     expect(evaluate({ title: 'Pokemon Booster Bundle', price: null, thirdParty: null })).toBeNull();
   });
+
+  it('uses an MSRP override when provided', () => {
+    const ev = evaluate(
+      { title: 'Pokemon Booster Bundle', price: 30, thirdParty: null },
+      { 'booster-bundle': 20 },
+    )!;
+    expect(ev.msrp).toBe(20);
+    expect(ev.ratio).toBeCloseTo(1.5);
+    expect(ev.status).toBe('gouging');
+  });
+
+  it('falls back to the default MSRP when no override exists for that category', () => {
+    const ev = evaluate(
+      { title: 'Pokemon Elite Trainer Box', price: 60, thirdParty: null },
+      { 'booster-bundle': 20 },
+    )!;
+    expect(ev.msrp).toBe(49.99);
+    expect(ev.status).toBe('over-msrp');
+  });
 });
 
 describe('shouldAct', () => {

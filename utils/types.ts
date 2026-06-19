@@ -20,6 +20,8 @@ export interface MsrpEntry {
   keywords: string[];
 }
 
+export type MsrpOverrides = Partial<Record<ProductCategory, number>>;
+
 export interface ProductInfo {
   title: string;
   price: number | null;

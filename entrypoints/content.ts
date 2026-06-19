@@ -90,12 +90,15 @@ export default defineContentScript({
         if (!node.title || node.price == null || isProcessed(node.el)) continue;
         markProcessed(node.el);
 
-        const evaluation = evaluate({
-          title: node.title,
-          price: node.price,
-          thirdParty: node.thirdParty,
-          sellerName: node.sellerName,
-        });
+        const evaluation = evaluate(
+          {
+            title: node.title,
+            price: node.price,
+            thirdParty: node.thirdParty,
+            sellerName: node.sellerName,
+          },
+          settings.msrpOverrides,
+        );
         if (!evaluation || !shouldAct(evaluation)) continue;
 
         if (settings.mode === 'hide' && node.kind === 'card') {

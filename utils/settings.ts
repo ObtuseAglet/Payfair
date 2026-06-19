@@ -1,4 +1,5 @@
 import { browser } from '#imports';
+import type { MsrpOverrides } from './types';
 
 export type DetectionMode = 'warn' | 'hide';
 
@@ -6,12 +7,14 @@ export interface Settings {
   enabled: boolean;
   mode: DetectionMode;
   gougeNotifications: boolean;
+  msrpOverrides: MsrpOverrides;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
   enabled: true,
   mode: 'warn',
   gougeNotifications: true,
+  msrpOverrides: {},
 };
 
 const STORAGE_KEY = 'payfair:settings';

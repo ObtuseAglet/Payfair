@@ -61,8 +61,11 @@ utils/
 
 ## Updating prices and selectors
 
-- **Prices:** edit the `MSRP_TABLE` in [`utils/msrp.ts`](utils/msrp.ts). Each
-  entry has a category, label, MSRP, and the title keywords that map to it.
+- **Built-in prices:** edit the `MSRP_TABLE` in [`utils/msrp.ts`](utils/msrp.ts).
+  Each entry has a category, label, MSRP, and the title keywords that map to it.
+- **Per-user overrides:** users can override any category's MSRP from the
+  popup's "MSRP overrides" panel without rebuilding the extension. Overrides
+  sync via `browser.storage.sync` and are merged on top of the built-in table.
 - **Site selectors:** retailer markup changes often. Each adapter in
   [`utils/sites`](utils/sites) lists CSS selectors from most to least specific;
   add fallbacks there when a site changes.

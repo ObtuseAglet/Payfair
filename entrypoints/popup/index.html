@@ -35,6 +35,15 @@
         <span>Notify me about price gouging (&ge;150% of MSRP)</span>
       </label>
 
+      <details>
+        <summary>MSRP overrides</summary>
+        <p class="hint">
+          Override the built-in MSRP for any category. Leave blank to use the default.
+        </p>
+        <div id="msrp-list" class="msrp-list"></div>
+        <button id="msrp-reset" type="button" class="reset">Reset all overrides</button>
+      </details>
+
       <p id="status" class="status" role="status"></p>
     </main>
     <script type="module" src="./main.ts"></script>
