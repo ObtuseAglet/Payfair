@@ -47,7 +47,11 @@ export function detectSeller(
     if (idx === -1) continue;
 
     const after = raw.slice(idx + pattern.length).replace(/^[:\s]+/, '');
-    const sellerName = after.split(/[.,|\n•·]| and | & /i)[0]?.trim().slice(0, 60) || null;
+    const sellerName =
+      after
+        .split(/[.,|\n•·]| and | & /i)[0]
+        ?.trim()
+        .slice(0, 60) || null;
     if (!sellerName) return { thirdParty: null, sellerName: null };
 
     const sellerLower = sellerName.toLowerCase();

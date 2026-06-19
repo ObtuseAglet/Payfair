@@ -38,6 +38,9 @@ pnpm zip            # packaged zip for store upload
 pnpm compile        # type-check only
 pnpm test           # run the Vitest suite
 pnpm test:watch     # vitest in watch mode
+pnpm lint           # eslint
+pnpm format         # prettier --write
+pnpm format:check   # prettier --check (used by CI)
 ```
 
 ## Project layout

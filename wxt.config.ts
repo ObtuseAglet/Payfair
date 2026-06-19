@@ -8,7 +8,11 @@ export default defineConfig({
     permissions: ['storage', 'notifications'],
     // Payfair sends no data anywhere; declare that for Firefox submissions.
     ...(browser === 'firefox'
-      ? { browser_specific_settings: { gecko: { data_collection_permissions: { required: ['none'] } } } }
+      ? {
+          browser_specific_settings: {
+            gecko: { data_collection_permissions: { required: ['none'] } },
+          },
+        }
       : {}),
   }),
 });

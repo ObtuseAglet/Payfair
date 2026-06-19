@@ -41,9 +41,7 @@ describe('matchProduct', () => {
 
   it('distinguishes Booster Box from Booster Bundle', () => {
     expect(matchProduct('Pokemon Surging Sparks Booster Box')?.category).toBe('booster-box');
-    expect(matchProduct('Pokemon Surging Sparks Booster Bundle')?.category).toBe(
-      'booster-bundle',
-    );
+    expect(matchProduct('Pokemon Surging Sparks Booster Bundle')?.category).toBe('booster-bundle');
   });
 
   it('prefers Mini Tin over Tin', () => {
@@ -88,9 +86,7 @@ describe('evaluate', () => {
   });
 
   it('returns null when price is missing', () => {
-    expect(
-      evaluate({ title: 'Pokemon Booster Bundle', price: null, thirdParty: null }),
-    ).toBeNull();
+    expect(evaluate({ title: 'Pokemon Booster Bundle', price: null, thirdParty: null })).toBeNull();
   });
 });
 
